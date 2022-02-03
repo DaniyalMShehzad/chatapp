@@ -36,20 +36,20 @@ const DashBoard = ({ route, navigation }) => {
     const Item = ({ img, username, date, uid }) => (
         <View style={styles.card}>
             <View style={styles.imgparent}>
-                {/* <Image style={styles.img} source={{ uri: img }} /> */}
-                <Image style={styles.img} source={{ uri: img }} resizeMode='contain' />
+                <Image source={{ uri: img }} resizeMode='contain' />
             </View>
             <TouchableOpacity style={styles.txtprimeparent2} onPress={() => {
                 // console.log(uid, "dataUid")
-                navigation.navigate('messages', {
-                    uid: uid,
-                });
+                console.log(img) 
+                // navigation.navigate('messages', {
+                //     uid: uid,
+                // });
             }
             }>
                 <View style={styles.txtprimeparent} >
                     <View style={styles.name}>
                         <Text numberOfLines={1} style={styles.txtprime}>{username}</Text>
-                        <Text numberOfLines={1} style={styles.dateText}>{(new Date(date).getHours >= 24) ? new Date(date).toLocaleString().split(",")[1] : new Date(date).toLocaleString().split(",")[0]}</Text>
+                        <Text numberOfLines={1} style={styles.dateText}>{(new Date(date).getDate() === new Date().getDate()) ? new Date(date).toISOString().split("T")[1].split(".")[0] : new Date(date).toISOString().split("T")[0]}</Text>
                     </View>
                     <View style={styles.date}>
                         <Text numberOfLines={1} style={styles.text_white}>you didnot get any messages from this account</Text>

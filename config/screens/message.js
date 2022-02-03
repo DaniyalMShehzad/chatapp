@@ -133,7 +133,7 @@ const Message = ({ route }) => {
             }
         })
     }
-    const openImageGallery=()=>{
+    const openImageGallery = () => {
         let options = {
             // includeBase64: true,
             mediaType: 'mixed'
@@ -228,7 +228,8 @@ const Message = ({ route }) => {
                                                                     :
                                                                     null
                                                         }
-                                                        <Text style={styles.dateText2}>{(new Date(e.date).getHours <= 24) ? new Date(e.date).toLocaleString().split(",")[1] : new Date(e.date).toLocaleString().split(",")[0]}</Text>
+                                                        <Text style={styles.dateText2}>{(new Date(e.date).getDate() === new Date().getDate()) ? new Date(e.date).toISOString().split("T")[1].split(".")[0] : new Date(e.date).toISOString().split("T")[0]}</Text>
+                                                        {/* <Text style={styles.dateText2}>{new Date(e.date).toLocaleString().split(",")}</Text> */}
                                                     </View>
                                                     :
                                                     (e.messageuid.receiver === uid && e.messageuid.receiver === myuserdata.uid || e.messageuid.sender === uid && e.messageuid.sender === myuserdata.uid) ?
@@ -249,6 +250,8 @@ const Message = ({ route }) => {
                                                                         :
                                                                         null
                                                             }
+                                                            <Text style={styles.dateText2}>{(new Date(e.date).getDate() === new Date().getDate()) ? new Date(e.date).toISOString().split("T")[1].split(".")[0] : new Date(e.date).toISOString().split("T")[0]}</Text>
+                                                            {/* <Text style={styles.dateText2} onPress={()=>console.log(new Date(e.date).toISOString().split("T")[0])}>{new Date(e.date).toISOString().split(",")[0]}</Text> */}
                                                         </View>
                                                         :
                                                         null
@@ -288,7 +291,7 @@ export default Message
 
 const styles = StyleSheet.create({
     ...styling,
-    keyboardavoidingView: {
+    keyboardavoidingView: { 
         // height: "",
     },
 })

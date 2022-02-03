@@ -22,22 +22,22 @@ const styling = {
     width: widthPercentageToDP('100%'),
     height: heightPercentageToDP("100%"),
   },
-  KeyboardAvoiding:{
+  KeyboardAvoiding: {
     width: widthPercentageToDP('100%'),
     height: heightPercentageToDP("100%"),
     flex: 1,
     // alignItems:"flex-start",
     // justifyContent:"flex-start",
   },
-  SafeAreaView:{
+  SafeAreaView: {
     height: heightPercentageToDP("90%"),
     width: widthPercentageToDP('100%'),
   },
-  SafeAreaViewImage:{
+  SafeAreaViewImage: {
     height: heightPercentageToDP("100%"),
     width: widthPercentageToDP('100%'),
   },
-  KeyboardAvoidingImage:{
+  KeyboardAvoidingImage: {
     width: widthPercentageToDP('100%'),
     height: "100%",
     // flex: 1,
@@ -48,21 +48,21 @@ const styling = {
     color: _light,
     // textAlign: 'center',
   },
-  container10:{
+  container10: {
     // fontSize: 16,
     // fontWeight: "500",
     // color: _light,
     // textAlign: 'center',
-    position:"absolute",
+    position: "absolute",
     elevation: 12,
-    right:17,
-    top:14,
+    right: 17,
+    top: 14,
   },
-  container11:{
-    position:"absolute",
+  container11: {
+    position: "absolute",
     elevation: 12,
-    right:50,
-    top:12,
+    right: 50,
+    top: 12,
   },
   header: {
     backgroundColor: _light,
@@ -132,28 +132,28 @@ const styling = {
     flexDirection: "row",
     height: "50%",
   },
-  container2:{
+  container2: {
     width: widthPercentageToDP("100%"),
     alignItems: "flex-end",
     justifyContent: "flex-start",
     flexDirection: "row",
     height: "50%",
   },
-  container8:{
+  container8: {
     width: widthPercentageToDP("45%"),
-    paddingleft:8,
+    paddingleft: 8,
     alignItems: "center",
     justifyContent: "flex-start",
   },
-  container9:{
+  container9: {
     width: widthPercentageToDP("7%"),
     alignItems: "flex-start",
     justifyContent: "flex-start",
   },
-  active:{
+  active: {
     // borderWidth:2,
-    borderBottomWidth:3,
-    borderColor:"#ffF",
+    borderBottomWidth: 3,
+    borderColor: "#ffF",
   },
   w100: {
     width: '100%',
@@ -238,7 +238,7 @@ const styling = {
     textAlign: "center",
     alignItems: "center",
   },
-  flexRow2img:{
+  flexRow2img: {
     width: "15%",
     height: "100%",
     textAlign: "center",
@@ -398,11 +398,14 @@ const styling = {
   },
   name3: {
     backgroundColor: "#fff",
-    maxWidth: "60%",
+    maxWidth: "80%",
     padding: 10,
     borderRadius: 20,
-    justifyContent: "flex-start",
     marginBottom: 8,
+    alignSelf: "flex-start"
+  },
+  name4:{
+    // maxWidth:"100%"
   },
   txtprimeparent3: {
     width: "100%",
@@ -460,24 +463,24 @@ const styling = {
     shadowRadius: 16.0,
     elevation: 24,
   },
-  ImageView:{
-    height:"88%",
-    width:widthPercentageToDP("100%")
+  ImageView: {
+    height: "88%",
+    width: widthPercentageToDP("100%")
   },
-  ImageView3:{
-    height:"100%",
-    width:"100%",
+  ImageView3: {
+    height: "100%",
+    width: "100%",
   },
-  ImageView4:{
-    minWidth:250,
-    minHeight:300,
-    borderRadius:6,
+  ImageView4: {
+    minWidth: 250,
+    minHeight: 300,
+    borderRadius: 6,
     // elevation:9
     // padding:10,
     // alignItems:"center"
   },
-  Imagetext:{
-    alignItems:"flex-end",
+  Imagetext: {
+    alignItems: "flex-end",
     // textAlign:"end",
     color: _TextColor,
     fontSize: 16,

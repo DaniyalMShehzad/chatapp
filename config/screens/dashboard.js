@@ -40,10 +40,10 @@ const DashBoard = ({ route, navigation }) => {
             </View>
             <TouchableOpacity style={styles.txtprimeparent2} onPress={() => {
                 // console.log(uid, "dataUid")
-                console.log(img) 
-                // navigation.navigate('messages', {
-                //     uid: uid,
-                // });
+                // console.log(img) 
+                navigation.navigate('messages', {
+                    uid: uid,
+                });
             }
             }>
                 <View style={styles.txtprimeparent} >

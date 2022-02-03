@@ -18,17 +18,17 @@ const AppRouter = ({ navigation }) => {
     console.log(userid);
     return (
         <NavigationContainer>
-            {/* {(userid) ? */}
-            <Stack.Navigator screenOptions={{headerShown: false}}>
-                <Stack.Screen name="DashBoard" component={DashBoard} />
-                <Stack.Screen name="messages" component={Message} />
-                {/* </Stack.Navigator>
+            {(userid) ?
+                <Stack.Navigator screenOptions={{ headerShown: false }}>
+                    <Stack.Screen name="DashBoard" component={DashBoard} />
+                    <Stack.Screen name="messages" component={Message} />
+                </Stack.Navigator>
                 :
-                <Stack.Navigator screenOptions={{ headerShown: false }}> */}
-                <Stack.Screen name="login" component={Login} />
-                <Stack.Screen name="signup" component={SignUp} />
-            </Stack.Navigator>
-            {/* } */}
+                <Stack.Navigator screenOptions={{ headerShown: false }}>
+                    <Stack.Screen name="login" component={Login} />
+                    <Stack.Screen name="signup" component={SignUp} />
+                </Stack.Navigator>
+            }
         </NavigationContainer>
     );
 }

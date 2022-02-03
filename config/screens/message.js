@@ -68,44 +68,50 @@ const Message = ({ route }) => {
         console.log(myuserdata, "myuserdata");
     }, [myuserdata])
     const sendMessage = () => {
-        let date = new Date().getTime()
-        console.log(date);
-        let obj = {
-            date: date,
-            messageuid: {
-                sender: user2.uid,
-                receiver: myuserdata.uid,
-            },
-            uid: user2.uid,
-            text: text,
-        }
-        dispatch((dispatch) => sendmessages(dispatch, obj, myuserdata))
-        setText("")
-        setTimeout(() => {
-            if (messages) {
-                console.log("hbgjkhghjghjg");
-                ScrollViewRef.current.scrollToEnd()
+        if (text) {
+
+            let date = new Date().getTime()
+            console.log(date);
+            let obj = {
+                date: date,
+                messageuid: {
+                    sender: user2.uid,
+                    receiver: myuserdata.uid,
+                },
+                uid: user2.uid,
+                text: text,
             }
-        }, 500)
+            dispatch((dispatch) => sendmessages(dispatch, obj, myuserdata))
+            setText("")
+            setTimeout(() => {
+                if (messages) {
+                    console.log("hbgjkhghjghjg");
+                    ScrollViewRef.current.scrollToEnd()
+                }
+            }, 500)
+        }
     }
     const sendMessage2 = () => {
-        let date = new Date().getTime()
-        console.log(date);
-        let obj = {
-            date: date,
-            messageuid: {
-                sender: user2.uid,
-                receiver: myuserdata.uid,
-            },
-            uid: user2.uid,
-            image: {
-                img: assetsuri,
-                caption: text,
+        if (assetsuri) {
+
+            let date = new Date().getTime()
+            console.log(date);
+            let obj = {
+                date: date,
+                messageuid: {
+                    sender: user2.uid,
+                    receiver: myuserdata.uid,
+                },
+                uid: user2.uid,
+                image: {
+                    img: assetsuri,
+                    caption: text,
+                }
             }
+            dispatch((dispatch) => sendmessages(dispatch, obj, myuserdata))
+            setText("")
+            setAssetsUri(false)
         }
-        dispatch((dispatch) => sendmessages(dispatch, obj, myuserdata))
-        setText("")
-        setAssetsUri(false)
     }
     useEffect(() => {
         setTimeout(() => {
@@ -235,6 +241,7 @@ const Message = ({ route }) => {
                                                     (e.messageuid.receiver === uid && e.messageuid.receiver === myuserdata.uid || e.messageuid.sender === uid && e.messageuid.sender === myuserdata.uid) ?
                                                         // null
                                                         <View style={styles.name3}>
+                                                            {/* <View style={styles.name4}> */}
                                                             {
                                                                 (e.text) ?
                                                                     <Text style={styles.TextText}>{e.text}</Text>
@@ -252,6 +259,7 @@ const Message = ({ route }) => {
                                                             }
                                                             <Text style={styles.dateText2}>{(new Date(e.date).getDate() === new Date().getDate()) ? new Date(e.date).toISOString().split("T")[1].split(".")[0] : new Date(e.date).toISOString().split("T")[0]}</Text>
                                                             {/* <Text style={styles.dateText2} onPress={()=>console.log(new Date(e.date).toISOString().split("T")[0])}>{new Date(e.date).toISOString().split(",")[0]}</Text> */}
+                                                            {/* // </View> */}
                                                         </View>
                                                         :
                                                         null
@@ -291,7 +299,7 @@ export default Message
 
 const styles = StyleSheet.create({
     ...styling,
-    keyboardavoidingView: { 
+    keyboardavoidingView: {
         // height: "",
     },
 })

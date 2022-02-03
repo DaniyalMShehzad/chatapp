@@ -109,7 +109,7 @@ const getUserid2data = (setUserId) => {
         if (user?.uid) {
             setUserId(user.uid)
         } else {
-            setUserId("")
+            setUserId()
         }
     })
 }
